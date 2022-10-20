@@ -1,0 +1,22 @@
+package com.testjavadeveloper.fikrizulfikarkusmana.service;
+
+import java.util.List;
+
+import org.springframework.stereotype.Service;
+
+import com.testjavadeveloper.fikrizulfikarkusmana.entity.Product;
+import com.testjavadeveloper.fikrizulfikarkusmana.repository.ProductRepository;
+
+@Service
+public class ProductService {
+
+    private ProductRepository productRepository;
+
+    public ProductService(ProductRepository productRepository) {
+        this.productRepository = productRepository;
+    }
+
+    public List<Product> getAllProducts() {
+        return this.productRepository.findAll();
+    }
+}
